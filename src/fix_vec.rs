@@ -1,11 +1,15 @@
-use std::ops;
-use std::fmt;
-use std::ops::Mul;
-use serde::{Serialize, Deserialize};
-use crate::fix_float::{FIX_FRACTION_BITS, FIX_ZERO, FixConvert, FixFloat, FixMath};
+use crate::fix_float::{FixConvert, FixFloat, FixMath, FIX_FRACTION_BITS, FIX_ZERO};
 use crate::int::point::IntPoint;
+use serde::{Deserialize, Serialize};
+use std::fmt;
+use std::ops;
+use std::ops::Mul;
+
+#[cfg(feature = "bevy")]
+use bevy_reflect::Reflect;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "bevy", derive(Reflect))]
 pub struct FixVec {
     pub x: FixFloat,
     pub y: FixFloat,
