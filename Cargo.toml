@@ -15,8 +15,10 @@ core = ["float_pt"]
 float_pt = []
 glam = ["dep:glam"]
 serde = ["dep:serde"]
+bevy = ["dep:bevy_reflect"]
 
 [dependencies]
 serde = { version = "^1.0", default-features = false, features = ["derive"], optional = true }
 glam = { optional = true, version = ">=0.27" }
 libm = "^0.2"
+bevy_reflect = { optional = true, version = "0.16.1" }

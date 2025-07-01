@@ -5,6 +5,7 @@ use crate::fix_float::{FIX_FRACTION_BITS, FIX_ZERO, FixConvert, FixFloat, FixMat
 use crate::int::point::IntPoint;
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(feature = "bevy", derive(bevy_reflect::Reflect))]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct FixVec {
     pub x: FixFloat,
