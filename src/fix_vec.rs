@@ -194,3 +194,12 @@ impl fmt::Display for FixVec {
         write!(f, "[{}, {}]", self.x, self.y)
     }
 }
+
+impl Default for FixVec {
+    fn default() -> Self {
+        Self {
+            x: Default::default(),
+            y: Default::default(),
+        }
+    }
+}
