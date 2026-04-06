@@ -56,6 +56,22 @@ impl FixVec {
     }
 
     #[inline(always)]
+    pub fn fix_mul(self, other: FixFloat) -> FixVec {
+        FixVec {
+            x: self.x.fix_mul(other),
+            y: self.y.fix_mul(other),
+        }
+    }
+
+    #[inline(always)]
+    pub fn fix_div(self, other: FixFloat) -> FixVec {
+        FixVec {
+            x: self.x.fix_div(other),
+            y: self.y.fix_div(other),
+        }
+    }
+
+    #[inline(always)]
     pub fn fix_normalize(self) -> Self {
         let l = self.length();
         let s = (1 << 30) / l;
